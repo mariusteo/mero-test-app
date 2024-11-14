@@ -8,12 +8,15 @@ export const AppointmentList: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Ultimele Programari</Text>
-      <ScrollView horizontal>
-        {
-          appointmentList.map((appointment)=>{
-            return <Appointment appointment={appointment}/>
-          })
-        }
+      <ScrollView horizontal >
+        <View style={styles.scrollContainer}>
+          {
+            appointmentList.map((appointment)=>{
+              return <Appointment appointment={appointment}/>
+            })
+          }
+        </View>
+
       </ScrollView>
     </View>
   )

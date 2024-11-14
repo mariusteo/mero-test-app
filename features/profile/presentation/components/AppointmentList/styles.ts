@@ -3,7 +3,7 @@ import {blue, gray} from "@/constants/Colors";
 
 export const styles = StyleSheet.create({
   container: {
-    padding: 15,
+    paddingVertical: 15,
     flexDirection: 'column',
     flex: 1,
     width: '100%',
@@ -20,8 +20,13 @@ export const styles = StyleSheet.create({
     borderRadius: 29
   },
   title: {
+    paddingHorizontal:15,
     fontSize: 18,
     fontWeight: 'bold',
   },
+  scrollContainer:{
+    paddingHorizontal:15,
+    flexDirection:'row',
+  }
 
 });
