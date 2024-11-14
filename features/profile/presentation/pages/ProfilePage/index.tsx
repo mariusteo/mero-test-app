@@ -6,6 +6,7 @@ import {Header} from "@/features/profile/presentation/components/Header";
 import {useRef} from "react";
 import {StatusBar} from "expo-status-bar";
 import {ProfileDescription} from "@/features/profile/presentation/components/ProfileDescription";
+import {AppointmentList} from "@/features/profile/presentation/components/AppointmentList";
 
 export const ProfilePage: React.FC = () => {
   const offset = useRef(new Animated.Value(0)).current;
@@ -22,6 +23,7 @@ export const ProfilePage: React.FC = () => {
             <ProfileCarousel images={profile.images}/>
             <ProfileDescription title={profile.name} score={profile.feedback?.score} reviews={profile.feedback?.total}
                                 address={profile.location?.address} profileImage={profile.profilePhoto?.small}/>
+            <AppointmentList />
             <Text>asda</Text>
             <Text>asda</Text>
             <Text>asda</Text>
