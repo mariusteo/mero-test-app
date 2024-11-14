@@ -14,7 +14,7 @@ export type PageProfile = {
   hideReviews?: boolean
 }
 
-type ProfileImage = {
+export type ProfileImage = {
   _id: string
   thumbnail: string
   small: string
@@ -41,32 +41,5 @@ type PageImage = {
   large: string
 }
 
-type PageReviews = {
-  data: PublicFeedbackDetails[]
-  next?: string
-}
 
-type AnonymousFeedbackDetails = {
-  _id: string
-  isAnonymous: true
-  feedback: {
-    score: number
-    review?: string
-  }
-}
 
-type VisibleFeedbackDetails = {
-  _id: string
-  isAnonymous?: false
-  user: {
-    firstname?: string
-    lastname?: string
-    profilePhoto?: ProfileImage
-  }
-  feedback: {
-    score: number
-    review?: string
-  }
-}
-
-type PublicFeedbackDetails = AnonymousFeedbackDetails | VisibleFeedbackDetails

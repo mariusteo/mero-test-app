@@ -13,7 +13,8 @@ export const styles = StyleSheet.create({
     backgroundColor: white,
     paddingTop: StatusBar.currentHeight,
     justifyContent: 'space-around',
-    alignItems: 'center'
+    alignItems: 'center',
+    elevation:22
   },
   transparentContainer: {
     position: 'absolute',

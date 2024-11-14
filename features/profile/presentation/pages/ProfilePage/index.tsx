@@ -1,4 +1,4 @@
-import {Animated, SafeAreaView, ScrollView, Text, View} from "react-native";
+import {Animated, SafeAreaView, ScrollView, View} from "react-native";
 import {styles} from "./styles";
 import {useProfilePage} from "@/features/profile/presentation/pages/ProfilePage/useProfilePage";
 import {ProfileCarousel} from "@/features/profile/presentation/components/ProfileCarousel";
@@ -29,8 +29,6 @@ export const ProfilePage: React.FC = () => {
               <AppointmentList/>
               <SectionList/>
             </ScrollView>
-
-
           </SafeAreaView>
         </ProfileContext.Provider>
         : <View/>}

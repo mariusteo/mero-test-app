@@ -1,12 +1,11 @@
 import React from "react";
 import {Text, View} from "react-native";
 import {styles} from "./styles";
-import app from "@/app";
 import hexToRgba from "hex-to-rgba";
 
 export const Appointment: React.FC = ({appointment}) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} key={appointment.title} >
       <View style={styles.statusContainer}>
         <Text style={{
           ...styles.statusText,
