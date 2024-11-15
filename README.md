@@ -1,3 +1,5 @@
+Nu am terminat, am de adaugat sectiunea de add review si full review page, o sa ma apuc de ea undeva dupa 12 maine. Tot codul de pana acum este commituit si pushuit
+
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
