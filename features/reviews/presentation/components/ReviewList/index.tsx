@@ -4,9 +4,10 @@ import {styles} from "./styles";
 import {ProfileContext} from "@/features/profile/presentation/context/ProfileContext";
 import {useReviewList} from "@/features/reviews/presentation/components/ReviewList/useReviewList";
 import {ReviewCard} from "@/features/reviews/presentation/components/ReviewCard";
+import {router} from "expo-router";
 
 export const ReviewList: React.FC = () => {
-  const {profile} = useContext(ProfileContext)
+  const {profile, openRatingModal} = useContext(ProfileContext)
   const {reviewList} = useReviewList({profileId: profile._id})
   return (
     <View style={styles.container}>
@@ -18,6 +19,7 @@ export const ReviewList: React.FC = () => {
       })}
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={() => {
+          router.push('ratingModal')
         }}>
           <View style={styles.textWrapper}>
             <Text style={styles.buttonTextWithBackground}>Vezi mai multe recenzii</Text>
@@ -26,8 +28,7 @@ export const ReviewList: React.FC = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={() => {
-        }}>
+        <TouchableOpacity onPress={openRatingModal}>
           <View style={styles.textWrapper}>
             <Text style={styles.buttonText}>Adauga Recenzie</Text>
           </View>

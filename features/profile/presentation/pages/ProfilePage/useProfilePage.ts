@@ -4,6 +4,7 @@ import {PageProfile} from "@/features/profile/domain/types/profile";
 
 export const useProfilePage = () => {
   const [profile, setProfile] = useState<PageProfile>()
+  const [showRatingModal, setShowRatingModal] = useState(false)
 
   useEffect(() => {
     getProfileUseCase({slug: 'one-barbershop'}).then((response) => {
@@ -11,6 +12,12 @@ export const useProfilePage = () => {
       setProfile(response.data)
     })
   }, []);
+  const openRatingModal = () => {
+    setShowRatingModal(true)
+  }
+  const closeRatingModal = () => {
+    setShowRatingModal(false)
+  }
 
-  return {profile};
+  return {profile, showRatingModal, openRatingModal, closeRatingModal};
 }

@@ -9,13 +9,15 @@ import {ProfileDescription} from "@/features/profile/presentation/components/Pro
 import {AppointmentList} from "@/features/profile/presentation/components/AppointmentList";
 import {SectionList} from "@/features/profile/presentation/components/SectionList";
 import {ProfileContext} from "@/features/profile/presentation/context/ProfileContext";
+import {HalfModal} from "@/features/ui/presentation/components/HalfModal";
+import {AddReview} from "@/features/reviews/presentation/components/AddReview";
 
 export const ProfilePage: React.FC = () => {
   const offset = useRef(new Animated.Value(0)).current;
-  const {profile} = useProfilePage()
+  const {profile, showRatingModal, closeRatingModal, openRatingModal} = useProfilePage()
   return (<>
       {profile ?
-        <ProfileContext.Provider value={{profile}}>
+        <ProfileContext.Provider value={{profile, openRatingModal}}>
           <SafeAreaView style={styles.container}>
             <StatusBar style={'dark'}/>
             <Header title={profile.name} animValue={offset} id={profile._id}/>
@@ -30,6 +32,11 @@ export const ProfilePage: React.FC = () => {
               <SectionList/>
             </ScrollView>
           </SafeAreaView>
+          <HalfModal showModal={showRatingModal} closeModal={closeRatingModal}>
+            <AddReview closeModal={closeRatingModal}/>
+          </HalfModal>
+
+
         </ProfileContext.Provider>
         : <View/>}
     </>
