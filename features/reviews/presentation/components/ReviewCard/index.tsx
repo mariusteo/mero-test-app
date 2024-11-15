@@ -4,7 +4,6 @@ import {styles} from "./styles";
 
 export const ReviewCard: React.FC = ({props}) => {
   const stars = []
-  console.log('#### score', props.user?.profilePhoto?.small)
   for (let i = 0; i < 5; i++) {
     if(i<props.feedback.score){
       stars.push( <Image source={require('@/assets/images/small_star.png')}/>)

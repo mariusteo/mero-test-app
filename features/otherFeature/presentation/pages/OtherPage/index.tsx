@@ -7,7 +7,7 @@ import {MeroButton} from "@/features/ui/presentation/components/MeroButton";
 export const OtherPage: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <MeroButton onPress={()=>{router.push('profile')}} />
+      <MeroButton onPress={()=>{router.push('profile')}} text={'view profile'}/>
     </SafeAreaView>
   )
 }

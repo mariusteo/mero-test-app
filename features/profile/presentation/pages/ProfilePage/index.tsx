@@ -35,8 +35,6 @@ export const ProfilePage: React.FC = () => {
           <HalfModal showModal={showRatingModal} closeModal={closeRatingModal}>
             <AddReview closeModal={closeRatingModal}/>
           </HalfModal>
-
-
         </ProfileContext.Provider>
         : <View/>}
     </>

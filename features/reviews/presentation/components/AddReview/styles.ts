@@ -4,8 +4,6 @@ import {gray} from "@/constants/Colors";
 export const styles = StyleSheet.create({
   container: {
     padding: 20,
-    flex: 1,
-    height: 300
   },
   titleText: {
     fontSize: 20,

@@ -3,11 +3,11 @@ import {white} from "@/constants/Colors";
 
 export const styles = StyleSheet.create({
   modalUpper: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: 'rgba(0,0,0,0.4)'
   },
   modalLower: {
-   height:300,
+    flexBasis:'auto',
     backgroundColor: white,
   }
 });

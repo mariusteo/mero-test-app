@@ -2,6 +2,7 @@ import {Image, Text, TouchableOpacity, View} from "react-native";
 import {useContext} from "react";
 import {ProfileContext} from "@/features/profile/presentation/context/ProfileContext";
 import {styles} from "./styles";
+import {router} from "expo-router";
 
 const ratings = [
   {
@@ -34,9 +35,13 @@ export const AddReview = ({closeModal}) => {
       <Text style={styles.descriptionText}>Click pe o stea pentru a evalua</Text>
       <View style={styles.starContainer}>
         {ratings.map((rating) => {
-          return <TouchableOpacity style={styles.starTouchable}>
+          return <TouchableOpacity style={styles.starTouchable} onPress={() => {
+            closeModal()
+            router.push('add-review')
+          }}>
+
             <Image source={require('@/assets/images/star_empty.png')}/>
-            <Text  numberOfLines={1} style={styles.starText}>{rating.text}</Text>
+            <Text numberOfLines={1} style={styles.starText}>{rating.text}</Text>
           </TouchableOpacity>
         })}
       </View>
