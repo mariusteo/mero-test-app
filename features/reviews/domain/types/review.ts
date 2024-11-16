@@ -29,3 +29,8 @@ export type VisibleFeedbackDetails = {
 }
 
 export type PublicFeedbackDetails = AnonymousFeedbackDetails | VisibleFeedbackDetails
+
+export type Feedback={
+  score: number
+  review?: string
+}

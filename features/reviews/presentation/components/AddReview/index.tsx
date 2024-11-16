@@ -34,10 +34,10 @@ export const AddReview = ({closeModal}) => {
       <Text style={styles.titleText}>Evalueaza serviciile oferite de Robert de la {profile.name}</Text>
       <Text style={styles.descriptionText}>Click pe o stea pentru a evalua</Text>
       <View style={styles.starContainer}>
-        {ratings.map((rating) => {
+        {ratings.map((rating, index) => {
           return <TouchableOpacity style={styles.starTouchable} onPress={() => {
             closeModal()
-            router.push('add-review')
+            router.push({pathname: 'add-review', params: {selection: index, shopName: profile.name}})
           }}>
 
             <Image source={require('@/assets/images/star_empty.png')}/>

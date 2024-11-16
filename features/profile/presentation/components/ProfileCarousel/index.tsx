@@ -14,7 +14,6 @@ export const ProfileCarousel: React.FC = ({images}) => {
           </View>
         }}
         style={styles.pagerView}
-        onSnapItem={(item) => console.log(item)}
       />
     </View>
   )

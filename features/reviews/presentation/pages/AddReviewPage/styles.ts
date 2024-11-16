@@ -83,11 +83,13 @@ export const styles = StyleSheet.create({
     fontSize: 16,
   },
   textInput: {
+    marginTop:10,
     borderStyle:'solid',
     borderWidth:1,
     borderColor:lightGray,
     fontSize:16,
-    paddingHorizontal:10
+    paddingHorizontal:10,
+    borderRadius:3
   }
 
 });

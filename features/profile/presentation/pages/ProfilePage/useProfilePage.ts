@@ -8,7 +8,6 @@ export const useProfilePage = () => {
 
   useEffect(() => {
     getProfileUseCase({slug: 'one-barbershop'}).then((response) => {
-      console.log('!!!', response)
       setProfile(response.data)
     })
   }, []);

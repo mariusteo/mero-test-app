@@ -1,16 +1,24 @@
 import {StyleSheet} from "react-native";
-import { gray, lightGray, white} from "@/constants/Colors";
+import {gray, lightGray, white} from "@/constants/Colors";
 
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: white,
     marginVertical: 5,
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: "flex-start",
     flex: 1,
     padding: 15,
 
-    elevation:3
+    elevation: 3
+  },
+  reviewContainer: {
+    backgroundColor: white,
+    marginVertical: 5,
+    flexDirection: 'row',
+    justifyContent: "flex-start",
+    flex: 1,
+
   },
   profileContainer: {
     width: 32,
@@ -36,19 +44,33 @@ export const styles = StyleSheet.create({
   },
   nameText: {
     fontSize: 16,
-    fontWeight: "bold"
+    fontWeight: 500
   },
-  starsContainer:{
-    flexDirection:"row",
-    lineHeight:20,
+  starsContainer: {
+    flexDirection: "row",
+    lineHeight: 20,
+    alignItems: 'center'
+  },
+  reviewText: {
+    color: gray,
+    fontSize: 14,
+  },
+  myReviewContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    height:30,
     alignItems:'center'
   },
-  reviewText:{
-    color:gray,
-    fontSize:14,
+  myReviewText:{
+    fontSize:17,
+    fontWeight: "bold",
+    lineHeight:30
   },
-  starImage:{
-
+  myReviewImage:{
+    height:30,
+    width:30,
+    justifyContent:'center',
+    alignItems:'center'
   }
 
 
