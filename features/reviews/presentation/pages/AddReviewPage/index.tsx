@@ -8,7 +8,7 @@ import {AddReviewContext} from "@/features/reviews/presentation/context/AddRevie
 
 export const AddReviewPAge: React.FC = () => {
 
-  const {currentDate, score, shopName, setScore, setReview, saveReview} = useAddReviewPage()
+  const {currentDate, score, shopName,review, setScore, setReview, saveReview} = useAddReviewPage()
 
   return (
     <AddReviewContext.Provider value={{score, setScore}}>
@@ -35,7 +35,7 @@ export const AddReviewPAge: React.FC = () => {
           <Text style={styles.descriptionText}>Opinia ta îi ajută la îmbunătățirea calității serviciilor, iar viitorii
             clienți primesc așteptările
             corecte.</Text>
-          <TextInput style={styles.textInput} multiline numberOfLines={3} onChangeText={setReview}
+          <TextInput style={styles.textInput} multiline numberOfLines={3} onChangeText={setReview} value={review}
                      placeholder={'Ajută-i pe alții oferind detalii despre experienta ta...'}/>
         </View>
         <MeroButton text={'Trimite'} onPress={saveReview} />

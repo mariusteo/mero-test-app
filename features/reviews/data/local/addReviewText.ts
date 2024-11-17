@@ -4,7 +4,7 @@ export const addReviewText= async (review) => {
   try {
     await AsyncStorage.setItem(
       `review-text`,
-      review,
+      review?? '',
     );
   } catch (error) {
     console.log('error', error)

@@ -10,6 +10,7 @@ export const useAddReviewPage = () => {
   const [review, setReview] = useState('')
   useEffect(() => {
     setScore(Number(params.selection))
+    setReview(params.text)
   }, []);
 
   const saveReview = () => {
@@ -17,5 +18,5 @@ export const useAddReviewPage = () => {
     router.back()
   }
 
-  return {currentDate, score, setScore, shopName: params.shopName, setReview, saveReview}
+  return {currentDate, score, setScore, shopName: params.shopName, setReview, saveReview, review}
 }

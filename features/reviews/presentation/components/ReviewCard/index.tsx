@@ -3,8 +3,8 @@ import {Image, Text, TouchableOpacity, View} from "react-native";
 import {styles} from "./styles";
 import {useReviewCard} from "@/features/reviews/presentation/components/ReviewCard/useReviewCard";
 
-export const ReviewCard: React.FC = ({props, myReview}) => {
-  const {showActionSheet} = useReviewCard()
+export const ReviewCard: React.FC = ({props, myReview, setOwnReview}) => {
+  const {showActionSheet} = useReviewCard({setOwnReview, props})
   const stars = []
   for (let i = 0; i < 5; i++) {
     if (i < props.feedback.score) {

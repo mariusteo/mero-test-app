@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     paddingTop: StatusBar.currentHeight,
     justifyContent: 'space-around',
     alignItems: 'center',
-    elevation:22
+    elevation: 5
   },
   transparentContainer: {
     position: 'absolute',

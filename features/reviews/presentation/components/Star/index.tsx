@@ -6,7 +6,7 @@ import {AddReviewContext} from "@/features/reviews/presentation/context/AddRevie
 export const Star: React.FC = ({image, position}) => {
   const {setScore} = useContext(AddReviewContext)
   return (
-    <TouchableOpacity onPress={()=>{setScore(position)}}>
+    <TouchableOpacity onPress={()=>{setScore(position+1)}}>
       <Image style={styles.starImage} source={image}/>
     </TouchableOpacity>
     )

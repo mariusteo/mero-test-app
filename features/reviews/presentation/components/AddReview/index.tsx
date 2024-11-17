@@ -37,9 +37,8 @@ export const AddReview = ({closeModal}) => {
         {ratings.map((rating, index) => {
           return <TouchableOpacity style={styles.starTouchable} onPress={() => {
             closeModal()
-            router.push({pathname: 'add-review', params: {selection: index, shopName: profile.name}})
+            router.push({pathname: 'add-review', params: {selection: index+1, shopName: profile.name}})
           }}>
-
             <Image source={require('@/assets/images/star_empty.png')}/>
             <Text numberOfLines={1} style={styles.starText}>{rating.text}</Text>
           </TouchableOpacity>

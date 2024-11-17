@@ -9,20 +9,21 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: "space-between",
     paddingHorizontal: 15,
-    alignItems:'center'
+    alignItems: 'center',
+    elevation: 5
   },
   headerText: {
     height: 50,
     lineHeight: 50,
-    fontSize:14,
-    fontWeight:500
+    fontSize: 14,
+    fontWeight: 500
   },
   closeButton: {
-    height: 25,
-    width: 25
+    height: 16,
+    width: 16
   },
-  balancer:{
-    height: 25,
-    width: 25
+  balancer: {
+    height: 16,
+    width: 16
   }
 });

@@ -10,13 +10,13 @@ export const useReviewList = ({profileId}) => {
   const [ownReview, setOwnReview] = useState<VisibleFeedbackDetails>()
 
   useEffect(() => {
-    getReviewsUseCase({id: profileId, pageSize: 5}).then((response) => {
+    getReviewsUseCase({id: profileId, pageSize: 5, next: null}).then((response) => {
       setReviewList(response.data)
     })
   }, []);
   useFocusEffect(
     useCallback(() => {
-      getReviewsUseCase({id: profileId, pageSize: 5}).then((response) => {
+      getReviewsUseCase({id: profileId, pageSize: 5, next: null}).then((response) => {
         setReviewList(response.data)
       })
       getReviewUseCase().then((result) => {
@@ -25,5 +25,5 @@ export const useReviewList = ({profileId}) => {
     }, [])
   )
 
-  return {reviewList, ownReview};
+  return {reviewList, ownReview, setOwnReview};
 }

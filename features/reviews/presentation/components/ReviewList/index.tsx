@@ -8,26 +8,28 @@ import {router} from "expo-router";
 
 export const ReviewList: React.FC = () => {
   const {profile, openRatingModal} = useContext(ProfileContext)
-  const {reviewList, ownReview} = useReviewList({profileId: profile._id})
+  const {reviewList, ownReview, setOwnReview} = useReviewList({profileId: profile._id})
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Recenzii si Evaluari</Text>,
       <Text style={styles.score}>{Math.floor(profile.feedback.score * 10) / 10}</Text>
       <Text style={styles.reviews}>{profile.feedback.total} evaluari</Text>
-      {ownReview && <ReviewCard props={ownReview} myReview={true}/>}
+      {ownReview && <ReviewCard props={ownReview} myReview={true} setOwnReview={setOwnReview}/>}
       {reviewList && reviewList.data.slice(0, 3).map((review) => {
         return <ReviewCard props={review}/>
       })}
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={() => {
-          router.push('ratingModal')
+          router.push({
+            pathname: 'reviews',
+            params: {profileId: profile._id, score: profile.feedback.score, total: profile.feedback.total}
+          })
         }}>
           <View style={styles.textWrapper}>
             <Text style={styles.buttonTextWithBackground}>Vezi mai multe recenzii</Text>
           </View>
         </TouchableOpacity>
       </View>
-
       {!ownReview && <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={openRatingModal}>
           <View style={styles.textWrapper}>
@@ -35,9 +37,6 @@ export const ReviewList: React.FC = () => {
           </View>
         </TouchableOpacity>
       </View>}
-
-
     </View>
-
   )
 }
